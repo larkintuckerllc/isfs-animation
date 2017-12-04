@@ -1,0 +1,82 @@
+#root {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+#rootSvg {
+  flex: 1 0 auto;
+  background-color: black;
+}
+.rootSvgCountry {
+  fill: #999999;
+  fill-opacity: 1;
+}
+.rootSvgLine {
+  fill: none;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: dash 5s linear forwards;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+#rootControls {
+  display: flex;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 0px;
+}
+#rootControlsPrev {
+  width: 0px;
+  height: 0px;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-right: 45px solid white;
+}
+.rootControlsPrevAdjacent {
+  margin-right: 30px;
+}
+#rootControlsNext {
+  width: 0px;
+  height: 0px;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 45px solid white;
+}
+@media screen and (min-width: 992px) {
+  #rootControlsPrev {
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-right: 75px solid white;
+  }
+  .rootControlsPrevAdjacent {
+    margin-right: 50px;
+  }
+  #rootControlsNext {
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 75px solid white;
+  }
+}
+@media screen and (min-width: 3000px) {
+  #rootControlsPrev {
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid transparent;
+    border-right: 150px solid white;
+  }
+  .rootControlsPrevAdjacent {
+    margin-right: 100px;
+  }
+  #rootControlsNext {
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid transparent;
+    border-left: 150px solid white;
+  }
+}
