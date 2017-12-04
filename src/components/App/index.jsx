@@ -5,12 +5,14 @@ import getQueryString from '../../util/getQueryString';
 import * as fromAuthenticated from '../../ducks/authenticated';
 import * as fromSlide from '../../ducks/slide';
 import Authentication from './Authentication';
+import Channel from './Channel';
 import styles from './index.css';
 
 const LAST_SLIDE = 2;
 const wall = getQueryString('wall');
 function App({ authenticated, setSlide, slide }) {
   if (wall !== null && !authenticated) return <Authentication />;
+  if (wall !== null) return <Channel />;
   return (
     <div id={styles.root}>
       <svg
