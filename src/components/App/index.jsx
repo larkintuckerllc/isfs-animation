@@ -1,11 +1,14 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
+import getQueryString from '../../util/getQueryString';
 import * as fromSlide from '../../ducks/slide';
 import styles from './index.css';
 
 const LAST_SLIDE = 2;
+const wall = getQueryString('wall');
 function App({ setSlide, slide }) {
+  if (wall !== null) return <div>WHAT</div>;
   return (
     <div id={styles.root}>
       <svg
