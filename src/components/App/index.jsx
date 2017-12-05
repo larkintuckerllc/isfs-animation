@@ -3,16 +3,26 @@ import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import getQueryString from '../../util/getQueryString';
 import * as fromAuthenticated from '../../ducks/authenticated';
+import * as fromChannel from '../../ducks/channel';
+import * as fromConnected from '../../ducks/connected';
 import * as fromSlide from '../../ducks/slide';
 import Authentication from './Authentication';
 import Channel from './Channel';
+import Connect from './Connect';
 import styles from './index.css';
 
 const LAST_SLIDE = 2;
 const wall = getQueryString('wall');
-function App({ authenticated, setSlide, slide }) {
+function App({
+  authenticated,
+  channel,
+  connected,
+  setSlide,
+  slide,
+}) {
   if (wall !== null && !authenticated) return <Authentication />;
-  if (wall !== null) return <Channel />;
+  if (wall !== null && channel === null) return <Channel />;
+  if (wall !== null && !connected) return <Connect />;
   return (
     <div id={styles.root}>
       <svg
@@ -1764,12 +1774,19 @@ function App({ authenticated, setSlide, slide }) {
 }
 App.propTypes = {
   authenticated: PropTypes.bool.isRequired,
+  channel: PropTypes.number,
+  connected: PropTypes.bool.isRequired,
   setSlide: PropTypes.func.isRequired,
   slide: PropTypes.number.isRequired,
+};
+App.defaultProps = {
+  channel: null,
 };
 export default connect(
   state => ({
     authenticated: fromAuthenticated.getAuthenticated(state),
+    channel: fromChannel.getChannel(state),
+    connected: fromConnected.getConnected(state),
     slide: fromSlide.getSlide(state),
   }),
   {

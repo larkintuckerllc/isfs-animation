@@ -7,11 +7,16 @@ const initialValue = getQueryString('wall') === null ? false : fromThr0w.authent
 const setAuthenticatedRequest = createAction('SET_AUTHENTICATED_REQUEST');
 const setAuthenticatedSuccess = createAction('SET_AUTHENTICATED_SUCCESS');
 const setAuthenticatedError = createAction('SET_AUTHENTICATED_ERROR');
-export const login = () => (dispatch) => {
-  // TODO: ACTUALLY IMPLEMENT
+export const login = (username, password) => (dispatch) => {
   dispatch(setAuthenticatedRequest(true));
-  dispatch(setAuthenticatedSuccess(true));
-  return Promise.resolve(true);
+  return fromThr0w.login(username, password)
+    .then(
+      () => dispatch(setAuthenticatedSuccess(true)),
+      () => {
+        dispatch(setAuthenticatedError());
+        throw new Error();
+      },
+    );
 };
 export const logout = () => (dispatch) => {
   dispatch(setAuthenticatedRequest(false));
