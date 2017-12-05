@@ -40,10 +40,10 @@ Authentication.propTypes = {
 };
 const AuthenticationForm = reduxForm({
   form: 'AUTHENTICATION_FORM',
-  validate: (values) => {
+  validate: ({ password, username }) => {
     const errors = {};
-    if (values.username === undefined) errors.username = '400';
-    if (values.password === undefined) errors.password = '400';
+    if (username === undefined) errors.username = '400';
+    if (password === undefined) errors.password = '400';
     return errors;
   },
 })(Authentication);

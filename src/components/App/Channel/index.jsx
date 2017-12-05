@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import { reduxForm } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import * as fromAuthenticated from '../../../ducks/authenticated';
+import * as fromChannel from '../../../ducks/channel';
 import styles from './index.css';
 
 function Channel({
@@ -16,9 +17,13 @@ function Channel({
       id={styles.root}
     >
       <form onSubmit={handleSubmit}>
+        <Field
+          component="input"
+          name="channel"
+        />
         <button
           disabled={!valid || submitting}
-        >Channel
+        >Connect
         </button>
       </form>
       <button
@@ -37,10 +42,9 @@ Channel.propTypes = {
 };
 const ChannelForm = reduxForm({
   form: 'CHANNEL_FORM',
-  validate: () => {
+  validate: ({ channel }) => {
     const errors = {};
-    // if (values.username === undefined) errors.username = '400';
-    // if (values.password === undefined) errors.password = '400';
+    if (channel === undefined) errors.channel = '400';
     return errors;
   },
 })(Channel);
@@ -49,8 +53,10 @@ class ChannelSubmit extends Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleSubmit() {
-    window.console.log(this);
+  handleSubmit({ channel }) {
+    const { setChannel } = this.props;
+    setChannel(parseInt(channel, 10));
+    return Promise.resolve();
   }
   render() {
     const { logout } = this.props;
@@ -65,10 +71,12 @@ class ChannelSubmit extends Component {
 }
 ChannelSubmit.propTypes = {
   logout: PropTypes.func.isRequired,
+  setChannel: PropTypes.func.isRequired,
 };
 export default connect(
   null,
   {
     logout: fromAuthenticated.logout,
+    setChannel: fromChannel.setChannel,
   },
 )(ChannelSubmit);

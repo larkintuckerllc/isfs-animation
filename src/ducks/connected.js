@@ -1,15 +1,21 @@
 import { combineReducers } from 'redux';
 import { combineActions, createAction, handleActions } from 'redux-actions';
 import * as fromThr0w from '../apis/thr0w';
+import * as fromChannel from './channel';
 
 const setConnectedRequest = createAction('SET_CONNECTED_REQUEST');
 const setConnectedSuccess = createAction('SET_CONNECTED_SUCCESS');
 const setConnectedError = createAction('SET_CONNECTED_ERROR');
-export const connect = () => (dispatch) => {
-  // TODO: IMPLEMENT
+export const connect = () => (dispatch, getState) => {
   dispatch(setConnectedRequest(true));
-  dispatch(setConnectedSuccess(true));
-  return Promise.resolve(true);
+  return fromThr0w.connect(fromChannel.getChannel(getState()), () => {})
+    .then(
+      () => dispatch(setConnectedSuccess(true)),
+      () => {
+        dispatch(setConnectedError());
+        throw new Error();
+      },
+    );
 };
 export const disconnect = () => (dispatch) => {
   dispatch(setConnectedRequest(false));
