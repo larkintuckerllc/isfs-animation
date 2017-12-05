@@ -1,6 +1,7 @@
 const BASE = `${window.location.protocol}//${window.location.hostname}`;
 export const BASE_URL_HTTP = `${BASE}:3000`;
 export const BASE_URL_SOCKET = `${BASE}:3001`;
+export const CHANNELS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 export const MATRIX = [
   [0, 1, 2],
   [3, 4, 5],
