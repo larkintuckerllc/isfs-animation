@@ -52,21 +52,6 @@
 }
 @media screen and (min-width: 992px) {
   #rootControlsPrev {
-    border-top: 50px solid transparent;
-    border-bottom: 50px solid transparent;
-    border-right: 75px solid white;
-  }
-  .rootControlsPrevAdjacent {
-    margin-right: 50px;
-  }
-  #rootControlsNext {
-    border-top: 50px solid transparent;
-    border-bottom: 50px solid transparent;
-    border-left: 75px solid white;
-  }
-}
-@media screen and (min-width: 3000px) {
-  #rootControlsPrev {
     border-top: 100px solid transparent;
     border-bottom: 100px solid transparent;
     border-right: 150px solid white;

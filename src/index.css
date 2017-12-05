@@ -7,3 +7,12 @@ html, body, :global(#frame), :global(#frame__content) {
 body {
   background-color: black;
 }
+:global(#frame) {
+  position: relative;
+  overflow: hidden;
+}
+:global(#frame__content) {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
