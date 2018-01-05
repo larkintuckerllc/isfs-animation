@@ -7,7 +7,7 @@ import reducers from './reducers';
 export default () => {
   const middlewares = [
     thunk,
-    thr0wMiddleware(['SET_SLIDE'], CHANNELS),
+    thr0wMiddleware(['SET_SLIDE', 'SET_COUNTRY_SLIDE_1'], CHANNELS),
   ];
   return createStore(
     reducers,
