@@ -16,3 +16,6 @@ body {
   left: 0px;
   top: 0px;
 }
+:global(.ct-chart) {
+  height: 100%;
+}

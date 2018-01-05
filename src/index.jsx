@@ -7,7 +7,7 @@ import { BASE_URL_HTTP, BASE_URL_SOCKET } from './config';
 import { setBaseHttp, setBaseSocket } from './apis/thr0w';
 import configureStore from './configureStore';
 import App from './components/App';
-import './index.css';
+import './index.scss';
 
 const wall = getQueryString('wall');
 if (wall !== null) {
