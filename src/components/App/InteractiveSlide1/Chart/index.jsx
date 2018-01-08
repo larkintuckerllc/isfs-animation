@@ -1,8 +1,10 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import ChartistGraph from 'react-chartist';
+import getQueryString from '../../../../util/getQueryString';
 import styles from './index.css';
 
+const wall = getQueryString('wall');
 function Chart({ series }) {
   const data = {
     series,
@@ -16,6 +18,7 @@ function Chart({ series }) {
         type="Pie"
         options={{
           donut: true,
+          donutWidth: wall === null ? 60 : 250,
           showLabel: false,
         }}
       />

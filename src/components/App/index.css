@@ -9,10 +9,10 @@
 }
 #rootSvg {
   flex: 1 0 auto;
-  background-color: black;
+  background-color: rgb(64,64,64);
 }
 .rootSvgCountry {
-  fill: #999999;
+  fill: #000000;
   fill-opacity: 1;
 }
 .rootSvgLine {

@@ -1,3 +1,5 @@
+@import '_colors';
+
 html, body, :global(#frame), :global(#frame__content) {
   margin: 0px;
   width: 100%;
@@ -6,6 +8,7 @@ html, body, :global(#frame), :global(#frame__content) {
 }
 body {
   background-color: black;
+  font-family: sans-serif;
 }
 :global(#frame) {
   position: relative;
@@ -16,6 +19,23 @@ body {
   left: 0px;
   top: 0px;
 }
-:global(.ct-chart) {
-  height: 100%;
+:global {
+  .ct-chart {
+    height: 100%;
+  }
+  .ct-series-a .ct-slice-donut {
+    stroke: $a;
+  }
+  .ct-series-b .ct-slice-donut {
+    stroke: $b;
+  }
+  .ct-series-c .ct-slice-donut {
+    stroke: $c;
+  }
+  .ct-series-d .ct-slice-donut {
+    stroke: $d;
+  }
+  .ct-series-e .ct-slice-donut {
+    stroke: $e;
+  }
 }

@@ -5,17 +5,24 @@
 }
 #rootChart {
   position: absolute;
-  left: 50%;
+  left: 55%;
+  width: 15%;
   bottom: 0px;
-  width: 25%;
-  height: 80%;
+  height: 60%;
+}
+#rootLegend {
+  position: absolute;
+  left: 79%;
+  bottom: 0px;
+  width: 15%;
+  height: 60%;
 }
 #rootMap {
   position: absolute;
   bottom: 0px;
-  left: 0px;
-  height: 80%;
-  width: 50%;
+  left: 6%;
+  height: 60%;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,9 +30,9 @@
 }
 #rootMapSvg {
   flex: 1 0 auto;
-  background-color: rgb(64,64,64);
+  background-color: rgb(80,80,80);
 }
 .rootMapSvgCountry {
-  fill: #999999;
+  fill: #000000;
   fill-opacity: 1;
 }
