@@ -1,15 +1,18 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import styles from './index.scss';
 
-function Legend() {
+function Legend({ items }) {
   return (
     <div id={styles.root}>
-      <div className={styles.rootItem}>Item</div>
-      <div className={styles.rootItem}>Item</div>
-      <div className={styles.rootItem}>Item</div>
-      <div className={styles.rootItem}>Item</div>
-      <div className={styles.rootItem}>Item</div>
+      {items.map(item => (
+        <div className={styles.rootItem}>{item}</div>
+      ))}
     </div>
   );
 }
+Legend.propTypes = {
+  // eslint-disable-next-line
+  items: PropTypes.array.isRequired,
+};
 export default Legend;

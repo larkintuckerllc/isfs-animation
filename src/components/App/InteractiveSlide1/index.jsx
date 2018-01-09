@@ -14,12 +14,87 @@ class InteractiveSlide1 extends Component {
   render() {
     const { countrySlide1, setCountrySlide1 } = this.props;
     let series;
+    let items;
     switch (countrySlide1) {
-      case 'mexico':
-        series = [1, 2, 3];
-        break;
       case 'russia':
+        series = [1, 2, 3];
+        items = [
+          'Russia',
+          'Sample B',
+          'Sample C',
+        ];
+        break;
+      case 'mexico':
         series = [1, 5, 5];
+        items = [
+          'Mexico',
+          'Sample B',
+          'Sample C',
+        ];
+        break;
+      case 'ecuador':
+        series = [1, 2, 3];
+        items = [
+          'Ecuador',
+          'Sample B',
+          'Sample C',
+        ];
+        break;
+      case 'india':
+        series = [1, 2, 3];
+        items = [
+          'India',
+          'Sample B',
+          'Sample C',
+        ];
+        break;
+      case 'vietnam':
+        series = [1, 2, 3];
+        items = [
+          'Vietnam',
+          'Sample B',
+          'Sample C',
+        ];
+        break;
+      case 'chile':
+        series = [1, 2, 3];
+        items = [
+          'Chile',
+          'Sample B',
+          'Sample C',
+        ];
+        break;
+      case 'indonesia':
+        series = [1, 2, 3];
+        items = [
+          'Indonesia',
+          'Sample B',
+          'Sample C',
+        ];
+        break;
+      case 'thailand':
+        series = [1, 2, 3];
+        items = [
+          'Thailand',
+          'Sample B',
+          'Sample C',
+        ];
+        break;
+      case 'canada':
+        series = [1, 2, 3];
+        items = [
+          'Canada',
+          'Sample B',
+          'Sample C',
+        ];
+        break;
+      case 'china':
+        series = [1, 2, 3];
+        items = [
+          'China',
+          'Sample B',
+          'Sample C',
+        ];
         break;
       default:
     }
@@ -33,7 +108,9 @@ class InteractiveSlide1 extends Component {
               />
             </div>
             <div id={styles.rootLegend}>
-              <Legend />
+              <Legend
+                items={items}
+              />
             </div>
           </div>
         )}
@@ -47,6 +124,7 @@ class InteractiveSlide1 extends Component {
               d="M781.68,324.4l-2.31,8.68l-12.53,4.23l-3.75-4.4l-1.82,0.5l3.4,13.12l5.09,0.57l6.79,2.57v2.57l3.11-0.57l4.53-6.27v-5.13l2.55-5.13l2.83,0.57l-3.4-7.13l-0.52-4.59L781.68,324.4L781.68,324.4z"
               className={styles.rootMapSvgCountry}
               style={{ fill: 'rgb(78,179,211)' }}
+              onClick={() => setCountrySlide1('indonesia')}
             />
             <path
               id="papua new guinea"
@@ -1180,6 +1258,7 @@ class InteractiveSlide1 extends Component {
               d="M158.22,48.66l1.99,3.01l1,4.02l4.98,1.25l3.49-3.76l2.99,1.51l8.47,0.75l5.98-2.51l1,8.28h3.49V57.7l3.49,0.25l8.72,10.29l5.73,3.51l-2.99,4.77l1.25,1.25L219,80.03l0.25,5.02l2.99,0.5l0.75-7.53l4.73-1.25l3.49,5.27l7.47,3.51l3.74,0.75l2.49-3.01l0.25-4.77l4.48-2.76l1.49,4.02l-3.99,7.03l0.5,3.51l2.24-3.51l4.48-4.02l0.25-5.27l-2.49-4.02l0.75-3.26l5.98-3.01l2.74,2.01l0.5,17.57l4.23-3.76l2.49,1.51l-3.49,6.02l4.48,1l6.48-10.04l5.48,5.77l-2.24,10.29l-5.48,3.01l-5.23-2.51l-9.46,2.01l1,3.26l-2.49,4.02l-7.72,1.76l-8.72,6.78l-7.72,10.29l-1,3.26l5.23,2.01l1.99,5.02l7.22,7.28l11.46,5.02l-2.49,11.54l-0.25,3.26l2.99,2.01l3.99-5.27l0.5-10.04l6.23-0.25l2.99-5.77l0.5-8.78l7.97-15.56l9.96,3.51l5.23,7.28l-2.24,7.28l3.99,2.26l9.71-6.53l2.74,17.82l8.97,10.79l0.25,5.52l-9.96,2.51l-4.73,5.02l-9.96-2.26l-4.98-0.25l-8.72,6.78l5.23-1.25l6.48-1.25l1.25,1.51l-1.74,5.52l0.25,5.02l2.99,2.01l2.99-0.75l1.5-2.26h1.99l-3.24,6.02l-6.23,0.25l-2.74,4.02h-3.49l-1-3.01l4.98-5.02l-5.98,2.01l-0.27-8.53l-1.72-1l-5.23,2.26l-0.5,4.27h-11.96l-10.21,7.03l-13.7,4.52l-1.49-2.01l6.9-10.3l-3.92-3.77l-2.49-4.78l-5.07-3.87l-5.44-0.45l-9.75-6.83l-70.71-11.62l-1.17-4.79l-6.48-6.02v-5.02l1-4.52l-0.5-2.51l-2.49-2.51l-0.5-4.02l6.48-4.52l-3.99-21.58l-5.48-0.25l-4.98-6.53L158.22,48.66L158.22,48.66z"
               className={styles.rootMapSvgCountry}
               style={{ fill: 'rgb(8,104,172)' }}
+              onClick={() => setCountrySlide1('canada')}
             />
             <path
               id="usa"
@@ -1256,6 +1335,7 @@ class InteractiveSlide1 extends Component {
               d="M230.2,335.85l-4.73,2.94l-0.34,4.36l-0.95,1.43l2.98,2.86l-1.29,1.41l0.3,3.6l5.33,1.27l8.07-9.55l-0.02-3.33l-3.87-0.25L230.2,335.85L230.2,335.85z"
               className={styles.rootMapSvgCountry}
               style={{ fill: 'rgb(224,243,219)' }}
+              onClick={() => setCountrySlide1('ecuador')}
             />
             <path
               id="peru"
@@ -1297,6 +1377,7 @@ class InteractiveSlide1 extends Component {
               d="M283.59,512.63l-3.21,3.55l-0.39,4.17l-6.21-3.52l-6.6-9.51l-1.94-3.39l2.72-3.52l-0.26-4.43l-3.1-1.3l-2.46-1.82l0.52-2.48l3.23-0.91l0.65-14.33l-5.04-2.87l-3.29-74.59l0.85-1.48l6.44,14.85l2.06,0.04l0.67,2.37l-2.74,3.32l-3.15,17.87l4.48,13.76l-2.07,10.42l7.3,30.64l0.77,17.92l5.23,6.05L283.59,512.63L283.59,512.63z"
               className={styles.rootMapSvgCountry}
               style={{ fill: 'rgb(123,204,196)' }}
+              onClick={() => setCountrySlide1('chile')}
             />
             <path
               id="chiloe"
@@ -1325,6 +1406,7 @@ class InteractiveSlide1 extends Component {
               d="M670.4,170.07l-3.46,8.7l-4.77-0.25l-5.03,11.01l4.27,5.44l-8.8,12.15l-4.52-0.76l-3.02,3.8l0.75,2.28l3.52,0.25l1.76,4.05l3.52,0.76l10.81,13.93v7.09l5.28,3.29l5.78-1.01l7.29,4.3l8.8,2.53l4.27-0.51l4.78-0.51l10.05-6.58l3.27,0.51l1.25,2.97l2.77,0.83l3.77,5.57l-2.51,5.57l1.51,3.8l4.27,1.52l0.75,4.56l5.03,0.51l0.75-2.28l7.29-3.8l4.52,0.25l5.28,5.82l3.52-1.52l2.26,0.25l1.01,2.79l1.76,0.25l2.51-3.54l10.05-3.8l9.05-10.89l3.02-10.38l-0.25-6.84l-3.77-0.76l2.26-2.53l-0.5-4.05l-9.55-9.62v-4.81l2.76-3.54l2.76-1.27l0.25-2.79h-7.04l-1.26,3.8l-3.27-0.76l-4.02-4.3l2.51-6.58l3.52-3.8l3.27,0.25l-0.5,5.82l1.76,1.52l4.27-4.3l1.51-0.25l-0.5-3.29l4.02-4.81l3.02,0.25l1.76-5.57l2.06-1.09l0.21-3.47l-2-2.1l-0.17-5.48l3.85-0.25l-0.25-14.13l-2.7,1.62l-1.01,3.62l-4.51-0.01l-13.07-7.35l-9.44-11.38l-9.58-0.1l-2.44,2.12l3.1,7.1l-1.08,6.66l-3.86,1.6l-2.17-0.17l-0.16,6.59l2.26,0.51l4.02-1.77l5.28,2.53v2.53l-3.77,0.25l-3.02,6.58l-2.76,0.25l-9.8,12.91l-10.3,4.56l-7.04,0.51l-4.77-3.29l-6.79,3.55l-7.29-2.28l-1.76-4.81l-12.31-0.76l-6.53-10.63h-2.76l-2.22-4.93L670.4,170.07z"
               className={styles.rootMapSvgCountry}
               style={{ fill: 'rgb(8,64,129)' }}
+              onClick={() => setCountrySlide1('china')}
             />
             <path
               id="mongolia"
@@ -1381,6 +1463,7 @@ class InteractiveSlide1 extends Component {
               d="M670.98,313.01l4.58-2.24l2.72-9.84l-0.12-12.08l15.58-16.82v-3.99l3.21-1.25l-0.12-4.61l-3.46-6.73l1.98-3.61l4.33,3.99l5.56,0.25v2.24l-1.73,1.87l0.37,1l2.97,0.12l0.62,3.36h0.87l2.23-3.99l1.11-10.46l3.71-2.62l0.12-3.61l-1.48-2.87l-2.35-0.12l-9.2,6.08l0.58,3.91l-6.46-0.02l-2.28-2.79l-1.24,0.16l0.42,3.88l-13.97-1l-8.66-3.86l-0.46-4.75l-5.77-3.58l-0.07-7.37l-3.96-4.53l-9.1,0.87l0.99,3.96l4.46,3.61l-7.71,15.78l-5.16,0.39l-0.85,1.9l5.08,4.7l-0.25,4.75l-5.19-0.08l-0.56,2.36l4.31-0.19l0.12,1.87l-3.09,1.62l1.98,3.74l3.83,1.25l2.35-1.74l1.11-3.11l1.36-0.62l1.61,1.62l-0.49,3.99l-1.11,1.87l0.25,3.24L670.98,313.01L670.98,313.01z"
               className={styles.rootMapSvgCountry}
               style={{ fill: 'rgb(204,235,197)' }}
+              onClick={() => setCountrySlide1('india')}
             />
             <path
               id="nepal"
@@ -1407,6 +1490,7 @@ class InteractiveSlide1 extends Component {
               d="M730.03,270.47l3.24,4.17v5.07l1.12,0.56l5.15-2.48l1.01,0.34l6.15,7.1l-0.22,4.85l-2.01-0.34l-1.79-1.13l-1.34,0.11l-2.35,3.94l0.45,2.14l1.9,1.01l-0.11,2.37l-1.34,0.68l-4.59-3.16v-2.82l-1.9-0.11l-0.78,1.24l-0.4,12.62l2.97,5.42l5.26,5.07l-0.22,1.47l-2.8-0.11l-2.57-3.83h-2.69l-3.36-2.71l-1.01-2.82l1.45-2.37l0.5-2.14l1.58-2.8l-0.07-6.44l-3.86-5.58l-0.16-0.68l1.25-1.26l-0.29-4.43l-5.14-6.51l0.6-3.75L730.03,270.47L730.03,270.47z"
               className={styles.rootMapSvgCountry}
               style={{ fill: 'rgb(43,140,190)' }}
+              onClick={() => setCountrySlide1('thailand')}
             />
             <path
               id="malaysia"
@@ -1428,6 +1512,7 @@ class InteractiveSlide1 extends Component {
               d="M745.06,304.45l1.19,1.87l0.22,2.14l3.13,0.34l3.8-5.07l3.58-1.01l1.9-5.18l-0.89-8.34l-3.69-5.07l-3.89-3.11l-4.95-8.5l3.55-5.94l-5.08-5.83l-4.07-0.18l-3.66,1.97l1.09,4.71l4.88,0.86l1.31,3.63l-1.72,1.12l0.11,0.9l11.45,11.2l0.45,3.29l-0.69,10.4L745.06,304.45L745.06,304.45z"
               className={styles.rootMapSvgCountry}
               style={{ fill: 'rgb(168,221,181)' }}
+              onClick={() => setCountrySlide1('vietnam')}
             />
             <path
               id="georgia"
