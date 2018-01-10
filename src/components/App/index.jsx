@@ -1835,6 +1835,13 @@ function App({
           </g>
         }
       </svg>
+      { slide === 1 &&
+        <div
+          className={wall === null ? styles.rootTitle : `${styles.rootTitle} ${styles.rootTitleWall}`}
+        >
+          Seafood Imports into the United States
+        </div>
+      }
       <div
         id={interactiveId}
       >

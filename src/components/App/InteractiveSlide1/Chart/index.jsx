@@ -18,7 +18,7 @@ function Chart({ series }) {
         type="Pie"
         options={{
           donut: true,
-          donutWidth: wall === null ? 60 : 250,
+          donutWidth: wall === null ? 45 : 200,
           showLabel: false,
         }}
       />

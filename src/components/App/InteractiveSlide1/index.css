@@ -3,19 +3,32 @@
   width: 100%;
   height: 100%;
 }
+.rootTitle {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 50%;
+  color: white;
+  font-size: 2vw;
+  background-color: rgba(0,0,0,0.5);
+  text-align: center;
+}
+.rootTitleWall {
+  font-size: 6vw;
+}
 #rootChart {
   position: absolute;
   left: 55%;
   width: 15%;
   bottom: 0px;
-  height: 60%;
+  height: 45%;
 }
 #rootLegend {
   position: absolute;
   left: 79%;
   bottom: 0px;
   width: 15%;
-  height: 60%;
+  height: 45%;
 }
 #rootMap {
   position: absolute;

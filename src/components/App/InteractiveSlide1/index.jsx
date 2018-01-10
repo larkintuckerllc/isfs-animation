@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import * as fromCountrySlide1 from '../../../ducks/countrySlide1';
+import getQueryString from '../../../util/getQueryString';
 import Chart from './Chart';
 import Legend from './Legend';
 import styles from './index.css';
 
+const wall = getQueryString('wall');
 class InteractiveSlide1 extends Component {
   componentWillUnmount() {
     const { setCountrySlide1 } = this.props;
@@ -13,10 +15,12 @@ class InteractiveSlide1 extends Component {
   }
   render() {
     const { countrySlide1, setCountrySlide1 } = this.props;
+    let title;
     let series;
     let items;
     switch (countrySlide1) {
       case 'russia':
+        title = 'Russia';
         series = [1, 2, 3];
         items = [
           'Russia',
@@ -25,6 +29,7 @@ class InteractiveSlide1 extends Component {
         ];
         break;
       case 'mexico':
+        title = 'Mexico';
         series = [1, 5, 5];
         items = [
           'Mexico',
@@ -33,6 +38,7 @@ class InteractiveSlide1 extends Component {
         ];
         break;
       case 'ecuador':
+        title = 'Ecuador';
         series = [1, 2, 3];
         items = [
           'Ecuador',
@@ -41,6 +47,7 @@ class InteractiveSlide1 extends Component {
         ];
         break;
       case 'india':
+        title = 'India';
         series = [1, 2, 3];
         items = [
           'India',
@@ -49,6 +56,7 @@ class InteractiveSlide1 extends Component {
         ];
         break;
       case 'vietnam':
+        title = 'Vietnam';
         series = [1, 2, 3];
         items = [
           'Vietnam',
@@ -57,6 +65,7 @@ class InteractiveSlide1 extends Component {
         ];
         break;
       case 'chile':
+        title = 'Chile';
         series = [1, 2, 3];
         items = [
           'Chile',
@@ -65,6 +74,7 @@ class InteractiveSlide1 extends Component {
         ];
         break;
       case 'indonesia':
+        title = 'Indonesia';
         series = [1, 2, 3];
         items = [
           'Indonesia',
@@ -73,6 +83,7 @@ class InteractiveSlide1 extends Component {
         ];
         break;
       case 'thailand':
+        title = 'Thailand';
         series = [1, 2, 3];
         items = [
           'Thailand',
@@ -81,6 +92,7 @@ class InteractiveSlide1 extends Component {
         ];
         break;
       case 'canada':
+        title = 'Canada';
         series = [1, 2, 3];
         items = [
           'Canada',
@@ -89,6 +101,7 @@ class InteractiveSlide1 extends Component {
         ];
         break;
       case 'china':
+        title = 'China';
         series = [1, 2, 3];
         items = [
           'China',
@@ -102,6 +115,7 @@ class InteractiveSlide1 extends Component {
       <div id={styles.root}>
         { countrySlide1 !== null && (
           <div>
+            <div className={wall === null ? styles.rootTitle : `${styles.rootTitle} ${styles.rootTitleWall}`}>Imports from {title}</div>
             <div id={styles.rootChart}>
               <Chart
                 series={series}

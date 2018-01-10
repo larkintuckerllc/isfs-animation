@@ -7,6 +7,20 @@
   height: 100%;
   background-color: black;
 }
+.rootTitle {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 100%;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  font-size: 4vw;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.rootTitleWall {
+  font-size: 12vw;
+}
 #rootSvg {
   flex: 1 0 auto;
   background-color: rgb(64,64,64);
