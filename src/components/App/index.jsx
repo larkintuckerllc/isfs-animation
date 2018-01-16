@@ -1,7 +1,10 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import getQueryString from '../../util/getQueryString';
+import { thr0w } from '../../apis/thr0w';
 import * as fromAuthenticated from '../../ducks/authenticated';
 import * as fromChannel from '../../ducks/channel';
 import * as fromConnected from '../../ducks/connected';
@@ -11,6 +14,7 @@ import Channel from './Channel';
 import Connect from './Connect';
 import InteractiveSlide1 from './InteractiveSlide1';
 import styles from './index.css';
+import map from './img/map.png';
 
 const LAST_SLIDE = 2;
 const wall = getQueryString('wall');
@@ -1876,6 +1880,20 @@ function App({
           />
         }
       </div>
+      {wall !== null &&
+        <div
+          id={styles.rootExit}
+        >
+          <img
+            src={map}
+            alt="back"
+            onClick={() => thr0w([10, 11, 12, 13, 14, 15, 16, 17, 18, 19], {
+              action: 'update',
+              url: 'http://192.168.1.2/kiosk.html',
+            })}
+          />
+        </div>
+      }
     </div>
   );
 }
